@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('marca');
+            $table->foreignId('cliente_id')->constrained('clientes')->onDelete('cascade');
+            $table->foreignId('producto_id')->constrained('productos')->onDelete('cascade');
+            $table->date('fecha');
+            $table->integer('cantidad');
             $table->decimal('precio', 10, 2);
-            $table->integer('stock');
-            $table->enum('estado', ['Disponible', 'Agotado'])->default('Disponible');
+            $table->string('estado'); // ejemplo: 'pendiente', 'enviado', 'cancelado'
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('pedidos');
     }
 };
