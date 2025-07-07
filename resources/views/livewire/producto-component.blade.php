@@ -55,14 +55,20 @@
                         <td class="px-4 py-3">{{ $producto->marca }}</td>
                         <td class="px-4 py-3">${{ number_format($producto->precio, 2) }}</td>
                         <td class="px-4 py-3">{{ $producto->stock }}</td>
-                        <td class="px-4 py-3">{{ $producto->estado }}</td>
+                        <td class="px-4 py-3">
+                            @if ($producto->stock == 0)
+                                <span class="text-red-600 font-semibold">Agotado</span>
+                            @else
+                                <span class="text-green-600">{{ ucfirst($producto->estado) }}</span>
+                            @endif
+                        </td>
                         <td class="px-4 py-3 space-x-2 whitespace-nowrap">
                             <button type="button" wire:click="edit({{ $producto->id }})"
                                 aria-label="Editar producto {{ $producto->id }}"
-                                class="text-sm text-green-500 hover:underline">Editar</button>
+                                class="text-green-600 dark:text-green-400 hover:underline">Editar</button>
                             <button type="button" wire:click="destroy({{ $producto->id }})"
                                 aria-label="Eliminar producto {{ $producto->id }}"
-                                class="text-sm text-red-500 hover:underline">Eliminar</button>
+                                class="text-red-600 dark:text-red-400 hover:underline">Eliminar</button>
                         </td>
                     </tr>
                 @endforeach

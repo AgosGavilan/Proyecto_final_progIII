@@ -16,4 +16,9 @@ class Producto extends Model
         'stock',
         'estado',
     ];
+    public function pedidos()
+{
+    return $this->hasMany(Pedido::class);
+}
+
 }

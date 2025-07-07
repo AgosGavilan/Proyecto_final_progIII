@@ -1,5 +1,6 @@
 {{-- Tipografía sugerida (en tu layout principal): --}}
-{{-- <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> --}}
+{{--
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> --}}
 {{-- Tailwind config: extend -> fontFamily: { poppins: ['Poppins', 'sans-serif'] } --}}
 
 <div class="p-4 sm:p-6 max-w-7xl mx-auto font-poppins text-gray-900 dark:text-gray-100">
@@ -16,12 +17,18 @@
         </div>
     @endif
 
-    <form wire:submit.prevent="{{ $cliente_id ? 'update' : 'store' }}" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md">
-        <input wire:model="nombre" type="text" placeholder="Nombre" class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
-        <input wire:model="apellido" type="text" placeholder="Apellido" class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
-        <input wire:model="telefono" type="text" placeholder="Teléfono" class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg md:col-span-2 w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
-        <input wire:model="email" type="email" placeholder="Email" class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg md:col-span-2 w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
-        <input wire:model="domicilio" type="text" placeholder="Domicilio" class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg md:col-span-2 w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
+    <form wire:submit.prevent="{{ $cliente_id ? 'update' : 'store' }}"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md">
+        <input wire:model="nombre" type="text" placeholder="Nombre"
+            class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
+        <input wire:model="apellido" type="text" placeholder="Apellido"
+            class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
+        <input wire:model="telefono" type="text" placeholder="Teléfono"
+            class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg md:col-span-2 w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
+        <input wire:model="email" type="email" placeholder="Email"
+            class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg md:col-span-2 w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
+        <input wire:model="domicilio" type="text" placeholder="Domicilio"
+            class="border border-gray-300 dark:border-gray-600 p-3 rounded-lg md:col-span-2 w-full bg-white dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C1272D] focus:ring-opacity-50">
 
         <div class="md:col-span-2 flex justify-center">
             <button type="submit"
@@ -52,9 +59,10 @@
                         <td class="px-4 py-3">{{ $cliente->telefono }}</td>
                         <td class="px-4 py-3">{{ $cliente->domicilio }}</td>
                         <td class="px-4 py-3 space-x-2 whitespace-nowrap">
-                            <button wire:click="edit({{ $cliente->id }})" class="text-sm text-green-500 hover:underline"
->Editar</button>
-                            <button wire:click="destroy({{ $cliente->id }})" class="text-sm text-red-500 hover:underline">Eliminar</button>
+                            <button wire:click="edit({{ $cliente->id }})"
+                                class="text-green-600 dark:text-green-400 hover:underline">Editar</button>
+                            <button wire:click="destroy({{ $cliente->id }})"
+                                class="text-red-600 dark:text-red-400 hover:underline">Eliminar</button>
                         </td>
                     </tr>
                 @endforeach
@@ -63,4 +71,3 @@
     </div>
 
 </div>
-

@@ -16,4 +16,9 @@ class Cliente extends Model
         'telefono',
         'domicilio',
     ];
+    
+    public function pedidos()
+    {
+        return $this->hasMany(Pedido::class);
+    }
 }
