@@ -25,7 +25,7 @@
                     class="flex flex-col items-center border border-neutral-300 dark:border-neutral-700 rounded-xl p-4 bg-white dark:bg-neutral-800 text-center">
                     <img src="{{ asset('images/agostina.jpg') }}" alt="Agostina Gavilan"
                         class="w-24 h-24 rounded-full object-cover mb-2" />
-                    <h3 class="font-semibold text-gray-900 dark:text-white">Agostina Gavilan</h3>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">Gavilán Agostina</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">Desarrolladora Frontend</p>
                     <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">
                         Desarrolladora Frontend con formación Full Stack, apasionada por la creación de experiencias

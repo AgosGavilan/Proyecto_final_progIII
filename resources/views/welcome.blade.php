@@ -7,7 +7,7 @@
     <title>TiendApp</title>
     {{-- Tipografía Poppins --}}
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    @vite('resources/css/app.css') {{-- si usás Vite --}}
+    @vite('resources/css/app.css')
     <style>
         body {
             font-family: 'Poppins', sans-serif;
