@@ -26,7 +26,7 @@ class PedidoComponent extends Component
     public function mount()
     {
         $this->clientes = Cliente::all();
-        $this->productos = Producto::all(); // Asegura que incluya 'precio'
+        $this->productos = Producto::all();
     }
 
     public function render()
@@ -114,9 +114,6 @@ class PedidoComponent extends Component
 
     // Refrescar lista de productos en este componente
     $this->productos = Producto::all();
-
-    // (Opcional) Notificar a otro componente
-    // $this->dispatch('stock-actualizado');
 
     session()->flash('message', 'Pedido realizado exitosamente.');
     $this->resetInput();

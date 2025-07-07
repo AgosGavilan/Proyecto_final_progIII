@@ -35,7 +35,7 @@
                 {{ __('Repositorio') }}
             </flux:navlist.item>
 
-            <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire"
+            <flux:navlist.item icon="book-open-text" href="https://drive.google.com/file/d/1DGliUiamw8AGe3PSefVurYYmg171sm3M/view?usp=sharing"
                 target="_blank">
                 {{ __('Documentación') }}
             </flux:navlist.item>

@@ -1,8 +1,3 @@
-{{-- Tipografía sugerida (en tu layout principal): --}}
-{{--
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> --}}
-{{-- Tailwind config: extend -> fontFamily: { poppins: ['Poppins', 'sans-serif'] } --}}
-
 <div class="p-4 sm:p-6 max-w-7xl mx-auto font-poppins text-gray-900 dark:text-gray-100">
 
     <div class="bg-gray-100 dark:bg-gray-800 shadow-lg rounded-xl p-6 mb-6">
